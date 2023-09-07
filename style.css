@@ -3,7 +3,7 @@
 *{
     margin: 0;
     padding: 0;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif;
 }
 
 html {
@@ -43,7 +43,9 @@ header {
     
 }
 
-
+.esconder-menu{
+    padding: 20px;
+}
 .mostrar-menu,
 .esconder-menu{
     font-size: 30px;
@@ -56,23 +58,94 @@ header {
     order:1;
 }
 
-.menu a:hover,
-.mostrar-menu:hover,
-.esconder-menu:hover{
+.menu a:hover{
     color: orange;
+
 }
+
+
+
+
+
+
 
 #check{
     display: none;
 }
 
 
-/* BANNER */
+/* RESPONSIVE */
+
+
+
+@media (max-width:780px) {
+    /*HEADER*/
+        .mostrar-menu,
+        .esconder-menu{
+        display: block;
+    }
+    
+
+
+    /* ↓ Menu lateral derecho ↓*/
+
+    .menu{
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background:#474747;      
+        right: -100%;
+        top: 0;
+        text-align: center;
+        padding: 100px 0px;
+        z-index: 1;
+        transition: 0.8s;
+    }
+
+    
+
+    .menu a:hover{
+        color: orange;
+        font-size: 20px;
+        color: black;
+    
+        display: block;
+        padding: 20px;
+    
+    }
+
+    .menu a{
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+
+    }
+
+    
+    #check:checked ~ .menu{
+        right: 0;
+    }
+
+    .esconder-menu {
+    
+        position: absolute;
+        top: 40px;
+        right: 10px;
+        cursor: pointer;
+        z-index: 2;
+    }
+
+
+    }
+
+
+
+/*-----------------*/
 
 #banner{
     padding: 0 50px;
     background-image: url(https://alserdental.com/wp-content/uploads/2014/10/sala-naranja-5.jpg);
-    height: 80vh;
+    height: 45vh;
     background-size: cover;
     background-position: center;
 }
@@ -82,7 +155,7 @@ header {
     background-color: rgba(130, 130, 138, 0.6);
     position: absolute;
     width: 100%;
-    height: 80vh;
+    height: 45vh;
     left: 0;
 }
 .contenido-banner{
@@ -90,34 +163,53 @@ header {
     color: white;
     display: flex;
     flex-direction: column;
+    align-items: center;
     justify-content: center;
+
+  
+    
 }
 .contenido-banner h3{
+    text-align: center; 
     font-size: 30px;
     font-weight: 400;
     padding: 10px 0;
+    
+     
 }
 
 .contenido-banner h3 span{
+    
     font-weight: 600;
 }
 
 
 .boton-empezar{
+    
     text-decoration:none;
     color: white;
     border: 1px solid white;
     padding: 20px 40px;
-    align-self: baseline;
+    align-self: center;
+    
+    
 }
 
 .boton-empezar:hover{
     background: rgb(254, 199, 97);
     transition: all 0.4s;
-}
+}*/
+
+
+
+
+
+/*-----------------*/
+
+
 
 /* PERSONAS */
-
+/*
   .personas{
   
   
@@ -179,25 +271,34 @@ header {
 
 }
 
-/* ICONOS */
 
+
+/*-----------------*/
+
+/* ICONOS */
+/*
 #iconos{
+    flex-direction:column;
     padding: 0px 50px;
     background: #474747;
    
 }
 #contenido-iconos{
-    
     padding: 50px 50px 0px 50px;
     display: flex;
     justify-content: space-between;
     text-align: center;
+    
 }
+ 
 
+@media (max-width: 360px){
 #contenido-iconos div{
+    flex-direction:column;
     flex: 1;
     margin: 20px 0px;
     border-right: 2px solid rgba(255, 255, 255, 0.2);
+}
 }
 
 #icono-mobile{
@@ -227,6 +328,8 @@ header {
  
 /* FORMULARIO */
 
+/*-----------------*/
+/*
 #contacto{
     background-color:orange;
     padding: 50px 0px;
@@ -302,12 +405,19 @@ form textarea::placeholder{
 
 /* FORMULARIO */
 
+/*-----------------*/
+
+/*
 .datos-form{
     flex-direction: column;
 }
 
 
 /* FOOTER */
+
+
+/*-----------------*/
+/*
 footer{
     background: gray;
     color: white;
@@ -316,62 +426,18 @@ footer{
 }
 
 
-/* RESPONSIVE */
-
-
-
- @media (max-width:360px) {
-    /*HEADER*/
-        .mostrar-menu,
-        .esconder-menu{
-        font-size: 16px;
-        display: block;}
-    
-
-
-    /* ↓ Menu lateral derecho ↓*/
-
-    .menu{
-        position: fixed;
-        width: 100%;
-        height: 100vh;
-        background:grey;      
-        right: -100%;
-        top: 0;
-        text-align: center;
-        padding: 100px 0px;
-        z-index: 0.8;
-    }
-
-
-    .menu a{
-        display: block;
-        padding: 20px;
-    }
-
-    .esconder-menu {
-    
-        position: absolute;
-        top: 40px;
-        transition: 40px;
-    }
-
-    #check:checked ~ .menu{
-        right: 0;
-    }
-
-    }
 
 /*---------------------*/
 
 
 /* Personas */
-    #personas{
+
+/*#personas{
         flex-direction: column;
     }
 
     /* ICONOS */
-
+/*
 #contenido-iconos{
     flex-direction: none;
 }
